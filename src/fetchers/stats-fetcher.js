@@ -177,7 +177,7 @@ const totalCommitsFetcher = async (username) => {
   const fetchTotalCommits = (variables, token) => {
     return axios({
       method: "get",
-      url: `https://api.github.com/search/commits?q=author:${variables.login}`,
+      url: `https://api.github.com/search/commits?q=is:private%20owner:${variables.login}`,
       headers: {
         "Content-Type": "application/json",
         Accept: "application/vnd.github.cloak-preview",
